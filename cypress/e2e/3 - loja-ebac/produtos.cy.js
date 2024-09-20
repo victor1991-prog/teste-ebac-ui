@@ -6,7 +6,12 @@ describe('Funcionalidade: Produtos', () => {
         });
      it('Deve selecionar um produto da lista', () => {
         cy.get('.product-block')
-            .first()
+            //.first()
+            //.last()
+            //.eq(2)
+            .contains('Abominable Hoodie')
             .click()
+
+            cy.get('#tab-title-description > a').should('contain','Descrição')
 });
     })
