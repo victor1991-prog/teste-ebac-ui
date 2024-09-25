@@ -2,13 +2,13 @@
 
 describe('Funcionalidade: Produtos', () => {
         beforeEach(() => {
-            cy.visit('http://lojaebac.ebaconline.art.br/produtos/')
+            cy.visit('produtos/')
         });
      it('Deve selecionar um produto da lista', () => {
         cy.get('.product-block')
-            //.first()
-            //.last()
-            //.eq(2)
+            //.first() Pega o primeiro elemento da lista
+            //.last() Pega o ultimo elemento da lista
+            //.eq(2) Pega um elemento aleatório da lista, informando o numero que o produto se encontra na web
             .contains('Abominable Hoodie')
             .click()
 
