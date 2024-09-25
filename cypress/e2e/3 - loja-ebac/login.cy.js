@@ -49,7 +49,7 @@ it ('Deve fazer login com sucesso - Usando massa de dados', () => {
     
     });
 
-    it.only('Deve fazer login com sucesso - Usando massa de Fixture', () => {
+    it('Deve fazer login com sucesso - Usando massa de Fixture', () => {
         cy.fixture('perfil').then( dados => {
             cy.get('#username').type(dados.usuario)
             cy.get('#password').type(dados.senha)
@@ -58,6 +58,12 @@ it ('Deve fazer login com sucesso - Usando massa de dados', () => {
 
         })
         
+        });
+
+        it.only('Deve fazer login com sucesso - Usando comnados customizados', () => {
+            cy.login('victor.teste@teste.com.br', 'teste1991'  )
+            cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('exist').get
+
         });
 
 })

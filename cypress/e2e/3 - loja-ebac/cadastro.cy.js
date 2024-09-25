@@ -21,6 +21,11 @@ describe('Funcionalidade: Cadastro', () => {
             cy.get('.woocommerce-MyAccount-content > :nth-child(3)').should('contain', 'A partir do painel de controle de sua conta, você pode ver suas compras recentes, gerenciar seus endereços de entrega e faturamento, e editar sua senha e detalhes da conta.')
         });
 
+it('Deve completar o cadastro com sucesso - usando comando customizado', () => {
+    cy.preCadastro(faker.internet.email(), 'teste1991', faker.person.firstName(),faker.person.lastName()  )
+    cy.get('.woocommerce-MyAccount-content > :nth-child(3)').should('exist')
+
+});
 
         it('Deve completar o cadastro com sucesso - Usando variáveis', () => {
             //cy.get('#reg_email').type('veve@teste.com.br')
