@@ -1,0 +1,27 @@
+[
+    {
+"nomeProduto": "Ingrid Running Jacket",
+"tamanho": "XS",
+"cor": "Orange",
+"quantidade": 3
+    },
+     {
+"nomeProduto": "Augusta Pullover Jacket",
+"tamanho": "S",
+"cor": "Red",
+"quantidade": 4
+    },
+    {
+"nomeProduto": "Josie Yoga Jacket",
+"tamanho": "S",
+"cor": "Black",
+"quantidade": 5
+    },
+     {
+"nomeProduto": "Apollo Running Short",
+"tamanho": "34",
+"cor": "Black",
+"quantidade": 2
+    }
+
+]

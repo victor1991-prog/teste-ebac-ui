@@ -1,5 +1,5 @@
 ///<reference types="cypress"/>
-const perfil = require('../../fixtures/perfil.json')
+const perfil = require('../../fixtures/perfil.json') //neste caso foi incluso a pasta perfil.json em require (que esta na pasta fixture) no script const para que o comando criado em "perfil.json" seja executado. O ".." é para acessar as pastas até encontrar a Fixture//
 
 describe('Funcionalidade: Login', () => {
 
@@ -51,8 +51,8 @@ it ('Deve fazer login com sucesso - Usando massa de dados', () => {
 
     it('Deve fazer login com sucesso - Usando massa de Fixture', () => {
         cy.fixture('perfil').then( dados => {
-            cy.get('#username').type(dados.usuario)
-            cy.get('#password').type(dados.senha)
+            cy.get('#username').type(dados.usuario , { log:false}) //comando false utilizado para que dados sensíveis não sejam exibibidos no Cypress ao rodar um teste//
+            cy.get('#password').type(dados.senha , { log:false })
             cy.get('.woocommerce-form > .button').click()
             cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('exist')
 
@@ -60,9 +60,9 @@ it ('Deve fazer login com sucesso - Usando massa de dados', () => {
         
         });
 
-        it.only('Deve fazer login com sucesso - Usando comnados customizados', () => {
+        it.only('Deve fazer login com sucesso - Usando comandos customizados', () => {
             cy.login('victor.teste@teste.com.br', 'teste1991'  )
-            cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('exist').get
+            cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('exist')
 
         });
 
